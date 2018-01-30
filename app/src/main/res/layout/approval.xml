@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/approval"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/work_item_mtb"
+    android:layout_marginTop="@dimen/work_item_mtb"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <!--标题-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/work_page_p"
+        android:layout_marginRight="@dimen/work_page_p"
+        android:text="@string/approvalManage"
+        android:textColor="@color/black"
+        android:textSize="@dimen/work_item_title_txt_s"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/work_item_mtb"
+        android:orientation="horizontal" />
+
+    <!--分割线-->
+    <include layout="@layout/work_item_splitline" />
+
+</LinearLayout>

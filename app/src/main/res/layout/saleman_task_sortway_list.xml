@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sortWaySelect"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/select_item_p"
+        android:paddingRight="@dimen/select_item_p">
+
+        <!--不排序-->
+        <TextView
+            android:id="@+id/noSort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:paddingBottom="@dimen/select_item_p"
+            android:paddingLeft="@dimen/select_item_p"
+            android:paddingTop="@dimen/select_item_p"
+            android:text="@string/noSort"
+            android:textColor="@color/theme" />
+
+        <include layout="@layout/car_infor_query_splitline" />
+
+        <!--进度由高到低-->
+        <TextView
+            android:id="@+id/scheduleTopToBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:paddingBottom="@dimen/select_item_p"
+            android:paddingLeft="@dimen/select_item_p"
+            android:paddingTop="@dimen/select_item_p"
+            android:text="@string/performanceFromTopToBottom"
+            android:textColor="@color/black" />
+
+        <include layout="@layout/car_infor_query_splitline" />
+
+        <!--进度由低到高-->
+        <TextView
+            android:id="@+id/scheduleBottomToTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:paddingBottom="@dimen/select_item_p"
+            android:paddingLeft="@dimen/select_item_p"
+            android:paddingTop="@dimen/select_item_p"
+            android:text="@string/scheduleBottomToTop"
+            android:textColor="@color/black" />
+
+        <include layout="@layout/car_infor_query_splitline" />
+
+        <!--完成度由高到低-->
+        <TextView
+            android:id="@+id/finishTopToBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:paddingBottom="@dimen/select_item_p"
+            android:paddingLeft="@dimen/select_item_p"
+            android:paddingTop="@dimen/select_item_p"
+            android:text="@string/finishTopToBottom"
+            android:textColor="@color/black" />
+
+        <include layout="@layout/car_infor_query_splitline" />
+
+        <!--完成度由低到高-->
+        <TextView
+            android:id="@+id/finishBottomToTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:paddingBottom="@dimen/select_item_p"
+            android:paddingLeft="@dimen/select_item_p"
+            android:paddingTop="@dimen/select_item_p"
+            android:text="@string/finishBottomToTop"
+            android:textColor="@color/black" />
+
+        <include layout="@layout/car_infor_query_splitline" />
+
+        <!--金额由高到低-->
+        <TextView
+            android:id="@+id/moneyTopToBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:paddingBottom="@dimen/select_item_p"
+            android:paddingLeft="@dimen/select_item_p"
+            android:paddingTop="@dimen/select_item_p"
+            android:text="@string/moneyTopToBottom"
+            android:textColor="@color/black" />
+
+        <include layout="@layout/car_infor_query_splitline" />
+
+        <!--金额由低到高-->
+        <TextView
+            android:id="@+id/moneyBottomToTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:paddingBottom="@dimen/select_item_p"
+            android:paddingLeft="@dimen/select_item_p"
+            android:paddingTop="@dimen/select_item_p"
+            android:text="@string/moneyBottomToTop"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/hidden"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/SelectCover"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="onClick"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/areaSelect"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/select_item_p"
+        android:paddingRight="@dimen/select_item_p">
+
+        <TextView
+            android:id="@+id/allArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:paddingBottom="@dimen/select_item_p"
+            android:paddingLeft="@dimen/select_item_p"
+            android:paddingTop="@dimen/select_item_p"
+            android:text="全部地区"
+            android:textColor="@color/theme" />
+
+        <include layout="@layout/car_infor_query_splitline" />
+
+        <TextView
+            android:id="@+id/chongqing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:paddingBottom="@dimen/select_item_p"
+            android:paddingLeft="@dimen/select_item_p"
+            android:paddingTop="@dimen/select_item_p"
+            android:text="重庆"
+            android:textColor="@color/black" />
+
+        <include layout="@layout/car_infor_query_splitline" />
+
+        <TextView
+            android:id="@+id/zunyi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:paddingBottom="@dimen/select_item_p"
+            android:paddingLeft="@dimen/select_item_p"
+            android:paddingTop="@dimen/select_item_p"
+            android:text="遵义"
+            android:textColor="@color/black" />
+
+        <include layout="@layout/car_infor_query_splitline" />
+
+        <TextView
+            android:id="@+id/tongren"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:paddingBottom="@dimen/select_item_p"
+            android:paddingLeft="@dimen/select_item_p"
+            android:paddingTop="@dimen/select_item_p"
+            android:text="铜仁"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/areaHidden"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/SelectCover"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="onClick"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+</LinearLayout>

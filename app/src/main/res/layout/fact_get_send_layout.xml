@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/superGrayBg">
+
+    <!--标题栏-->
+    <RelativeLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_h"
+        android:layout_alignParentTop="true"
+        android:background="@color/theme"
+        android:paddingLeft="@dimen/title_bar_plr"
+        android:paddingRight="@dimen/title_bar_plr">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="onClick"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_bar_txt_s" />
+
+    </RelativeLayout>
+
+    <com.mingbang.mingbang.mingbang.view.MyReboundScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/split_line"
+        android:layout_below="@+id/titleBar"
+        android:background="@color/fill_bg"
+        android:overScrollMode="never"
+        android:paddingBottom="@dimen/fill_order_pb">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--搜索框-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/infor_item_ptb"
+                android:paddingLeft="@dimen/infor_item_plr"
+                android:paddingRight="@dimen/infor_item_plr"
+                android:paddingTop="@dimen/infor_item_ptb">
+
+                <include layout="@layout/search_box_order" />
+
+            </LinearLayout>
+
+            <!--订单编号-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr"
+                android:paddingTop="@dimen/fill_order_pb">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/orderNumber"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_pb"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--创建时间-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/createTime"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--客户-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/client"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--货物-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/cargo"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--数量-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/number"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--总价-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="@string/totalPrice"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--确认人-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/ensureMan"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--确认时间-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/ensureTime"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.mingbang.mingbang.mingbang.view.MyReboundScrollView>
+
+    <!--分割线-->
+    <View
+        android:id="@+id/split_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_above="@+id/submit_btn"
+        android:background="@color/light_gray" />
+
+    <!--底部-->
+    <LinearLayout
+        android:id="@+id/submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/fill_order_plr"
+        android:paddingRight="@dimen/fill_order_plr">
+
+        <TextView
+            android:id="@+id/inputType"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textColor="@color/black" />
+
+        <EditText
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/pleaseWrite"
+            android:paddingLeft="@dimen/edit_p_l"
+            android:singleLine="true"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/work_norm_txt_s" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_h"
+            android:layout_marginBottom="@dimen/button_mlbt"
+            android:layout_marginLeft="@dimen/button_mlbt"
+            android:layout_marginTop="@dimen/button_mlbt"
+            android:layout_weight="2"
+            android:background="@drawable/button_shape"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_txt_s" />
+    </LinearLayout>
+
+</RelativeLayout>

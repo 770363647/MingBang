@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/superGrayBg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--自定义状态栏-->
+            <LinearLayout
+                android:id="@+id/statusBar"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/theme"
+                android:orientation="horizontal"
+                tools:ignore="Suspicious0dp" />
+
+            <!--标题栏-->
+            <RelativeLayout
+                android:id="@+id/titleBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/title_bar_h"
+                android:background="@color/theme"
+                android:paddingLeft="@dimen/title_bar_plr"
+                android:paddingRight="@dimen/title_bar_plr">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:onClick="onClick"
+                    android:src="@mipmap/back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/carIncomeExpenseQuery"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_bar_txt_s" />
+
+            </RelativeLayout>
+
+            <!--搜索框-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/infor_item_ptb"
+                android:paddingLeft="@dimen/infor_item_plr"
+                android:paddingRight="@dimen/infor_item_plr"
+                android:paddingTop="@dimen/infor_item_ptb">
+
+                <include layout="@layout/search_box_one" />
+
+            </LinearLayout>
+
+            <!--日历信息栏-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="10dp"
+                android:paddingLeft="@dimen/title_bar_plr"
+                android:paddingRight="@dimen/title_bar_plr"
+                android:paddingTop="5dp">
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/thisMonth"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:id="@+id/calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    android:src="@mipmap/calendar" />
+
+            </RelativeLayout>
+
+            <!--分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/superGrayBg" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!--日历选择-->
+    <include layout="@layout/month_calendar" />
+
+</FrameLayout>

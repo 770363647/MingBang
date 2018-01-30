@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/superGrayBg"
+    android:orientation="vertical">
+
+    <!--标题栏-->
+    <RelativeLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_h"
+        android:background="@color/theme"
+        android:paddingLeft="@dimen/title_bar_plr"
+        android:paddingRight="@dimen/title_bar_plr">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="onClick"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/carInforQuery"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_bar_txt_s" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--筛选栏-->
+        <LinearLayout
+            android:id="@+id/selectBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/select_bar_ptb"
+            android:paddingTop="@dimen/select_bar_ptb">
+
+            <!--地区筛选-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:onClick="onClick">
+
+                <TextView
+                    android:id="@+id/area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="3dp"
+                    android:drawableRight="@mipmap/dark_down_list"
+                    android:onClick="onClick"
+                    android:text="全部地区"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/select_bar_txt_s" />
+
+            </LinearLayout>
+
+            <!--状态筛选-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="3dp"
+                    android:drawableRight="@mipmap/dark_down_list"
+                    android:onClick="onClick"
+                    android:text="全部状态"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/select_bar_txt_s" />
+
+            </LinearLayout>
+
+            <!--车辆所属筛选-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/belong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="3dp"
+                    android:drawableRight="@mipmap/dark_down_list"
+                    android:onClick="onClick"
+                    android:text="全部车辆"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/select_bar_txt_s" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--分割线-->
+        <View
+            android:id="@+id/splitLine"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/selectBar"
+            android:background="@color/gray" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/splitLine">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!--地区选择-->
+        <include
+            layout="@layout/car_infor_area_select"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/splitLine" />
+
+        <!--状态选择-->
+        <include
+            layout="@layout/car_infor_state_select"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/splitLine" />
+
+        <!--所属选择-->
+        <include
+            layout="@layout/car_infor_belong_select"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/splitLine" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

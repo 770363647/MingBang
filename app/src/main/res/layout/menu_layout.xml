@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/menu_shape"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <!--退出登录-->
+    <LinearLayout
+        android:id="@+id/exitLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:onClick="onClick"
+        android:paddingBottom="@dimen/menu_item_ptb"
+        android:paddingLeft="@dimen/menu_item_plr"
+        android:paddingRight="@dimen/menu_item_plr"
+        android:paddingTop="@dimen/menu_item_ptb">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/exit_login" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/menu_item_title_ml"
+            android:text="@string/exit_login"
+            android:textColor="@color/black"
+            android:textSize="@dimen/menu_item_txt_s"
+            tools:ignore="RtlHardcoded" />
+
+    </LinearLayout>
+
+    <!--修改密码-->
+    <LinearLayout
+        android:id="@+id/changePw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:onClick="onClick"
+        android:paddingBottom="@dimen/menu_item_ptb"
+        android:paddingLeft="@dimen/menu_item_plr"
+        android:paddingRight="@dimen/menu_item_plr"
+        android:paddingTop="@dimen/menu_item_ptb">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/change_pw" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/menu_item_title_ml"
+            android:gravity="left|center_vertical"
+            android:text="@string/change_pw"
+            android:textColor="@color/black"
+            android:textSize="@dimen/menu_item_txt_s"
+            tools:ignore="RtlHardcoded" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/packSelect"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/select_item_p"
+        android:paddingRight="@dimen/select_item_p">
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/packHidden"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/SelectCover"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="onClick"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+</LinearLayout>

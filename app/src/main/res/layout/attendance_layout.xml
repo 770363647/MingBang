@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <!--自定义状态栏-->
+            <LinearLayout
+                android:id="@+id/statusBar"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/theme"
+                android:orientation="horizontal"
+                tools:ignore="Suspicious0dp" />
+
+            <!--标题栏-->
+            <RelativeLayout
+                android:id="@+id/titleBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/title_bar_h"
+                android:background="@color/theme"
+                android:paddingLeft="@dimen/title_bar_plr"
+                android:paddingRight="@dimen/title_bar_plr">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:onClick="onClick"
+                    android:src="@mipmap/back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/attendance"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_bar_txt_s" />
+
+            </RelativeLayout>
+
+            <!--信息栏-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/attendance_infor_bar_h"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/title_bar_plr"
+                android:paddingRight="@dimen/title_bar_plr">
+
+                <!--头像-->
+                <LinearLayout
+                    android:id="@+id/avatar"
+                    android:layout_width="@dimen/attendance_avatar_hw"
+                    android:layout_height="@dimen/attendance_avatar_hw"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/attendance_avatar_shape"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/avatarTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="玉灵"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/title_bar_plr"
+                    android:layout_toRightOf="@+id/avatar"
+                    android:orientation="vertical">
+
+                    <!--姓名-->
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="玉灵子"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="考勤组：考勤"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <!--日历-->
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="3dp"
+                    android:drawableRight="@mipmap/down_arrow"
+                    android:gravity="center_vertical"
+                    android:onClick="onClick"
+                    android:text="@string/today"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <!--分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/superGrayBg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/title_bar_plr"
+                android:layout_marginTop="20dp"
+                android:text="打卡记录时间和位置"
+                android:textSize="12sp" />
+
+            <!--打卡圆饼图-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="116dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/attend_cake_shape"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/clockIn"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/curTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="17:56:36"
+                            android:textColor="#efefef"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!--日历选择-->
+    <include
+        layout="@layout/day_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

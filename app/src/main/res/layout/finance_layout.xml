@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/superGrayBg"
+    android:orientation="vertical">
+
+    <!--标题栏-->
+    <RelativeLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_h"
+        android:layout_alignParentTop="true"
+        android:background="@color/theme"
+        android:paddingLeft="@dimen/title_bar_plr"
+        android:paddingRight="@dimen/title_bar_plr">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="onClick"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/finance"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_bar_txt_s" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:onClick="onClick"
+            android:text="@string/finish"
+            android:textColor="@color/white"
+            android:textSize="@dimen/work_item_title_txt_s" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/fill_order_plr"
+            android:paddingRight="@dimen/fill_order_plr"
+            android:paddingTop="@dimen/fill_order_plr">
+
+            //信息查看
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/inforWatch"
+                android:textColor="@color/theme"
+                android:textSize="@dimen/finance_text" />
+
+            //信息录入
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/finance_mt"
+                android:gravity="center"
+                android:text="@string/inforEntry"
+                android:textColor="@color/black"
+                android:textSize="@dimen/finance_text" />
+
+            //车辆管理
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/finance_mt"
+                android:gravity="center"
+                android:text="@string/carManage"
+                android:textColor="@color/black"
+                android:textSize="@dimen/finance_text" />
+
+            //订单管理
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/finance_mt"
+                android:gravity="center"
+                android:text="@string/orderManage"
+                android:textColor="@color/black"
+                android:textSize="@dimen/finance_text" />
+        </LinearLayout>
+
+
+        <com.mingbang.mingbang.mingbang.view.MyReboundScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@color/fill_bg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--查看客户信息-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/order_row_h"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/finance_p">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/checked" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/finance_img_tl"
+                        android:text="@string/watchStaffInfor"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <!--我的绩效-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/order_row_h"
+                    android:layout_marginTop="@dimen/fill_order_mint"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/finance_p">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/checked"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/finance_img_tl"
+                        android:text="@string/myPerformance"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <!--查看仓库信息-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/order_row_h"
+                    android:layout_marginTop="@dimen/fill_order_mint"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/finance_p">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/checked"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/finance_img_tl"
+                        android:text="@string/watchWarehouseInfor"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.mingbang.mingbang.mingbang.view.MyReboundScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

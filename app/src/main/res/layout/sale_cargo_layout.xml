@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/superGrayBg"
+    android:orientation="vertical">
+
+    <!--标题栏-->
+    <RelativeLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_h"
+        android:background="@color/theme"
+        android:paddingLeft="@dimen/title_bar_plr"
+        android:paddingRight="@dimen/title_bar_plr">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="onClick"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/saleCargoQuery"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_bar_txt_s" />
+
+    </RelativeLayout>
+
+    <!--搜索框-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/infor_item_ptb"
+        android:paddingLeft="@dimen/infor_item_plr"
+        android:paddingRight="@dimen/infor_item_plr"
+        android:paddingTop="@dimen/infor_item_ptb">
+
+        <include layout="@layout/search_box_one" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--筛选栏-->
+        <LinearLayout
+            android:id="@+id/selectBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/select_bar_ptb"
+            android:paddingTop="5dp">
+
+            <!--品牌筛选-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:onClick="onClick">
+
+                <TextView
+                    android:id="@+id/brand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="3dp"
+                    android:drawableRight="@mipmap/dark_down_list"
+                    android:onClick="onClick"
+                    android:text="全部品牌"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/select_bar_txt_s" />
+
+            </LinearLayout>
+
+            <!--规格筛选-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/specification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="3dp"
+                    android:drawableRight="@mipmap/dark_down_list"
+                    android:onClick="onClick"
+                    android:text="全部规格"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/select_bar_txt_s" />
+
+            </LinearLayout>
+
+            <!--包装筛选-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/pack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="3dp"
+                    android:drawableRight="@mipmap/dark_down_list"
+                    android:onClick="onClick"
+                    android:text="全部包装"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/select_bar_txt_s" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--分割线-->
+        <View
+            android:id="@+id/splitLine"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/selectBar"
+            android:background="@color/gray" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/splitLine">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!--品牌选择-->
+        <include
+            layout="@layout/sale_cargo_brand_select"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/splitLine" />
+
+        <!--规格选择-->
+        <include
+            layout="@layout/sale_cargo_specification_select"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/splitLine" />
+
+        <!--包装选择-->
+        <include
+            layout="@layout/sale_cargo_pack_select"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/splitLine" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

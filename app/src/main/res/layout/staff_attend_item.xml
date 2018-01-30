@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/staff_attend_item_ptb">
+
+    <!--头像-->
+    <com.mingbang.mingbang.mingbang.view.RoundImageView
+        android:layout_width="@dimen/staff_attend_item_avatar_hw"
+        android:layout_height="@dimen/staff_attend_item_avatar_hw"
+        android:layout_marginLeft="@dimen/title_bar_plr"
+        android:src="@mipmap/logo" />
+
+    <!--信息栏-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/title_bar_plr"
+        android:layout_marginRight="@dimen/title_bar_plr"
+        android:orientation="vertical">
+
+        <!--姓名-->
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="姓名"
+            android:textColor="@color/black" />
+
+        <!--打卡时间-->
+        <TextView
+            android:id="@+id/attendTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="打卡时间"
+            android:textSize="12sp" />
+
+        <!--打卡地点-->
+        <TextView
+            android:id="@+id/attendPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="打卡地点"
+            android:textSize="12sp" />
+
+        <!--分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/staff_attend_item_ptb"
+            android:background="@color/light_gray" />
+
+    </LinearLayout>
+
+</LinearLayout>

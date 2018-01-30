@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--背景图片-->
+    <ImageView
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/login_bg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!--logo-->
+            <com.mingbang.mingbang.mingbang.view.RoundImageView
+                android:layout_width="@dimen/login_logo_hw"
+                android:layout_height="@dimen/login_logo_hw"
+                android:layout_marginTop="@dimen/login_logo_mt"
+                android:src="@mipmap/logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/login"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/account"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_et_bt_h"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/login_et_shape"
+                android:hint="@string/inputAccount"
+                android:padding="5dp"
+                android:textCursorDrawable="@drawable/login_et_cursor"
+                android:textSize="@dimen/login_et_txt_s" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_et_bt_h"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/login_et_shape"
+                android:hint="@string/inputPassword"
+                android:inputType="textPassword"
+                android:padding="5dp"
+                android:textCursorDrawable="@drawable/login_et_cursor"
+                android:textSize="@dimen/login_et_txt_s" />
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_et_bt_h"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/login_bt_shape"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:onClick="onClick"
+                android:padding="0dp"
+                android:text="@string/login"
+                android:textColor="@color/white"
+                android:textSize="@dimen/login_et_txt_s"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/clientRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick"
+                    android:text="@string/clientRegister"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/login_et_txt_s" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="|"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/login_et_txt_s" />
+
+                <TextView
+                    android:id="@+id/forgetPs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick"
+                    android:text="@string/forgetPs"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/login_et_txt_s" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/companyName"
+            android:textColor="@color/gray"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mingbang.mingbang.mingbang.view.MyReboundScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/work_page_p"
+        android:paddingTop="@dimen/work_page_p">
+
+        <!--banner-->
+        <com.mingbang.mingbang.mingbang.view.RoundImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/work_banner_h"
+            android:layout_marginLeft="@dimen/work_page_p"
+            android:layout_marginRight="@dimen/work_page_p"
+            android:scaleType="fitXY"
+            android:src="@mipmap/banner"
+            app:xhradius="5dp"
+            app:xhtype="fillet" />
+
+        <!--考勤管理-->
+        <include layout="@layout/attendance" />
+
+        <!--财务报表-->
+        <include layout="@layout/financial_statement" />
+
+        <!--审批管理-->
+        <include layout="@layout/approval" />
+
+        <!--信息查询-->
+        <include layout="@layout/infor_query" />
+
+        <!--信息录入-->
+        <include layout="@layout/infor_entry" />
+
+        <!--管理员功能-->
+        <include layout="@layout/administrator_function" />
+
+        <!--订单管理-->
+        <include layout="@layout/order_manage" />
+
+        <!--车辆管理-->
+        <include layout="@layout/car_manage" />
+
+        <!--招标管理-->
+        <include layout="@layout/tender_manage" />
+
+        <!--报销管理-->
+        <include layout="@layout/reimbursement_manage" />
+
+    </LinearLayout>
+
+</com.mingbang.mingbang.mingbang.view.MyReboundScrollView>

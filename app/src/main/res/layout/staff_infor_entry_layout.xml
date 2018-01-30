@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/superGrayBg">
+
+    <!--标题栏-->
+    <RelativeLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_h"
+        android:layout_alignParentTop="true"
+        android:background="@color/theme"
+        android:paddingLeft="@dimen/title_bar_plr"
+        android:paddingRight="@dimen/title_bar_plr">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="onClick"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/staffInforEntry"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_bar_txt_s" />
+    </RelativeLayout>
+
+    <com.mingbang.mingbang.mingbang.view.MyReboundScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/split_line"
+        android:layout_below="@+id/titleBar"
+        android:background="@color/fill_bg"
+        android:overScrollMode="never"
+        android:paddingBottom="@dimen/fill_order_mt">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--姓名-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mt"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!--身份证号-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/idNumber"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--住址-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/address"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--照片-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:minHeight="@dimen/order_row_h"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/photo"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:background="@null"
+                    android:gravity="center|right"
+                    android:text="@string/upload"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/work_norm_txt_s" />
+            </LinearLayout>
+
+            <!--部门-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mt"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/department"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--职位-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/position"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--联系方式-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/contactWay"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--学历-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mt"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/educationBackground"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--毕业学校-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/graduateSchool"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--工资标准-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="2dp"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/payScale"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--身高-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mt"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/height"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--体重-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/weight"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--民族-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/nation"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--政治面貌-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mt"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/politicsStatus"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--紧急联系人姓名-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mt"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="4"
+                    android:gravity="left|center"
+                    android:text="@string/urgenContactName"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--紧急联系人电话-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="4"
+                    android:gravity="left|center"
+                    android:text="@string/urgenContactPhone"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--紧急联系人关系-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="4"
+                    android:gravity="left|center"
+                    android:text="@string/urgenContactRelation"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--家庭成员-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mt"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/familyMember"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--婚姻状况-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:gravity="left|center"
+                    android:text="@string/martialStatus"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--是否经人介绍-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="30dp"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="4"
+                    android:gravity="left|center"
+                    android:text="@string/isIntroduce"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--介绍人姓名-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="4"
+                    android:gravity="left|center"
+                    android:text="@string/introducerName"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--与介绍人关系-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="4"
+                    android:gravity="left|center"
+                    android:text="@string/introducerRelationship"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--介绍人工作单位-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="4"
+                    android:gravity="left|center"
+                    android:text="@string/introducerWorkUnit"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--介绍人电话-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/order_row_h"
+                android:layout_marginTop="@dimen/fill_order_mint"
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingLeft="@dimen/fill_order_plr"
+                android:paddingRight="@dimen/fill_order_plr">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="4"
+                    android:gravity="left|center"
+                    android:text="@string/introducerPhone"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/work_norm_txt_s" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/fill_order_mlt"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:gravity="center|end"
+                        android:hint="@string/input"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/work_norm_txt_s" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.mingbang.mingbang.mingbang.view.MyReboundScrollView>
+
+    <!--分割线-->
+    <View
+        android:id="@+id/split_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_above="@+id/submit_btn"
+        android:background="@color/light_gray" />
+
+    <!--提交按钮-->
+    <LinearLayout
+        android:id="@+id/submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_shape"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

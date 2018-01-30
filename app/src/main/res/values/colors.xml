@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@android:color/transparent</color>
+    <color name="colorPrimaryDark">@android:color/transparent</color>
+    <color name="colorAccent">#3999f9</color>
+    <color name="white">#fff</color>
+    <color name="theme">#65b6d1</color>
+    <color name="superGrayBg">#efefef</color>
+    <color name="black">#000</color>
+    <color name="gray">#888</color>
+    <color name="middle_gray">#bec1be</color>
+    <color name="light_gray">#ccc</color>
+    <color name="foot_tab_txt_cl">#a4a5a9</color>
+    <color name="infor_search_bg">#ececec</color>
+    <color name="red">#f00</color>
+    <color name="attendCoverBg">#88000000</color>
+    <color name="fill_bg">#f8f8f8</color>
+    <color name="SelectCover">#99000000</color>
+    <color name="cyanine">#17b78c</color>
+    <color name="orange">#eeae5a</color>
+    <color name="lightRed">#f26653</color>
+    <color name="blue">#3094fa</color>
+    <color name="yellow">#ecc61b</color>
+    <color name="magenta">#ef4b2a</color>
+    <color name="lightGreen">#17c195</color>
+    <color name="purple">#815be2</color>
+
+</resources>

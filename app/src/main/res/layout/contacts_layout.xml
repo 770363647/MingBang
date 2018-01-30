@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--搜索框-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/infor_item_ptb"
+        android:paddingLeft="@dimen/infor_item_plr"
+        android:paddingRight="@dimen/infor_item_plr"
+        android:paddingTop="@dimen/infor_item_ptb">
+
+        <include layout="@layout/search_box_one" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.mingbang.mingbang.mingbang.view.ObservableScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--分组-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <!--客户-->
+                <RelativeLayout
+                    android:id="@+id/custom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingBottom="@dimen/contacts_item_ptb"
+                    android:paddingLeft="@dimen/infor_item_plr"
+                    android:paddingRight="@dimen/infor_item_plr"
+                    android:paddingTop="@dimen/contacts_item_ptb"
+                    tools:ignore="NewApi">
+
+                    <ImageView
+                        android:id="@+id/arrow1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/contacts_item_arrow_mr"
+                        android:src="@mipmap/right_arrow" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/arrow1"
+                        android:text="@string/custom"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right"
+                        android:text="10/20"
+                        android:textSize="10sp" />
+
+                </RelativeLayout>
+
+                <!--客户下拉列表-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/customList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:overScrollMode="never"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <!--内部联系人-->
+                <RelativeLayout
+                    android:id="@+id/innearContacts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingBottom="@dimen/contacts_item_ptb"
+                    android:paddingLeft="@dimen/infor_item_plr"
+                    android:paddingRight="@dimen/infor_item_plr"
+                    android:paddingTop="@dimen/contacts_item_ptb"
+                    tools:ignore="NewApi">
+
+                    <ImageView
+                        android:id="@+id/arrow2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/contacts_item_arrow_mr"
+                        android:src="@mipmap/right_arrow" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/arrow2"
+                        android:text="@string/innearContacts"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right"
+                        android:text="18/36"
+                        android:textSize="10sp" />
+
+                </RelativeLayout>
+
+                <!--内部联系人下拉列表-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/innearContactsList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:overScrollMode="never"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </com.mingbang.mingbang.mingbang.view.ObservableScrollView>
+
+        <!--分组悬浮-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <!--客户-->
+            <RelativeLayout
+                android:id="@+id/custom_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingBottom="@dimen/contacts_item_ptb"
+                android:paddingLeft="@dimen/infor_item_plr"
+                android:paddingRight="@dimen/infor_item_plr"
+                android:paddingTop="@dimen/contacts_item_ptb"
+                android:visibility="gone"
+                tools:ignore="NewApi">
+
+                <ImageView
+                    android:id="@+id/arrow1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/contacts_item_arrow_mr"
+                    android:src="@mipmap/right_arrow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/arrow1_1"
+                    android:text="@string/custom"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="right"
+                    android:text="10/20"
+                    android:textSize="10sp" />
+
+            </RelativeLayout>
+
+            <!--内部联系人-->
+            <RelativeLayout
+                android:id="@+id/innearContacts_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingBottom="@dimen/contacts_item_ptb"
+                android:paddingLeft="@dimen/infor_item_plr"
+                android:paddingRight="@dimen/infor_item_plr"
+                android:paddingTop="@dimen/contacts_item_ptb"
+                android:visibility="gone"
+                tools:ignore="NewApi">
+
+                <ImageView
+                    android:id="@+id/arrow2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/contacts_item_arrow_mr"
+                    android:src="@mipmap/right_arrow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/arrow2_1"
+                    android:text="@string/innearContacts"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="right"
+                    android:text="18/36"
+                    android:textSize="10sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

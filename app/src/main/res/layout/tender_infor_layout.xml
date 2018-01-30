@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/superGrayBg"
+    android:orientation="vertical">
+
+    <!--标题栏-->
+    <RelativeLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_h"
+        android:background="@color/theme"
+        android:paddingLeft="@dimen/title_bar_plr"
+        android:paddingRight="@dimen/title_bar_plr">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="onClick"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/tenderInforQuery"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_bar_txt_s" />
+
+    </RelativeLayout>
+
+    <!--分类栏-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/tender_classify_bar_ptb"
+        android:paddingTop="@dimen/tender_classify_bar_ptb">
+
+        <!--未处理-->
+        <TextView
+            android:id="@+id/untreated"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="@string/untreated"
+            android:textColor="@color/theme"
+            android:textSize="@dimen/tender_classify_txt_s" />
+
+        <!--已处理-->
+        <TextView
+            android:id="@+id/processed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="@string/processed"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tender_classify_txt_s" />
+
+    </LinearLayout>
+
+    <!--指示条-->
+    <View
+        android:id="@+id/indicataor"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="@color/theme" />
+
+    <!--主体内容-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

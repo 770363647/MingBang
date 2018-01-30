@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/elastic"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--弹性果冻下拉头部-->
+    <com.mingbang.mingbang.mingbang.view.VainSwipeHeader
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="铭邦物流"
+            android:textColor="@color/gray"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/englishCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MingBang Logistics"
+            android:textColor="@color/gray"
+            android:textSize="12sp" />
+
+    </com.mingbang.mingbang.mingbang.view.VainSwipeHeader>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--搜索框-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/infor_item_ptb"
+            android:paddingLeft="@dimen/infor_item_plr"
+            android:paddingRight="@dimen/infor_item_plr"
+            android:paddingTop="@dimen/infor_item_ptb">
+
+            <include layout="@layout/search_box_one" />
+
+        </LinearLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" />
+
+    </LinearLayout>
+
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

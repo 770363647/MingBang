@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/accident_item_mlr"
+    android:layout_marginRight="@dimen/accident_item_mlr"
+    android:layout_marginTop="@dimen/accident_item_mtb"
+    android:background="@color/superGrayBg"
+    android:orientation="vertical">
+
+    <!--时间-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/accident_item_time_mb"
+        android:background="@drawable/time_box_shape"
+        android:paddingBottom="@dimen/accident_item_time_ptb"
+        android:paddingLeft="@dimen/accident_item_time_plr"
+        android:paddingRight="@dimen/accident_item_time_plr"
+        android:paddingTop="@dimen/accident_item_time_ptb">
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="08:58"
+            android:textColor="@color/white"
+            android:textSize="@dimen/accident_item_title_txt_s" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--logo-->
+        <LinearLayout
+            android:layout_width="@dimen/accident_item_logo_hw"
+            android:layout_height="@dimen/accident_item_logo_hw"
+            android:background="@drawable/accident_logo_shape"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/accident" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/accident_item_mlr"
+            android:orientation="vertical">
+
+            <!--标题-->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/accidentHandler"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/accident_item_title_txt_s" />
+
+            <LinearLayout
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/accident_item_content_shape"
+                android:gravity="center">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
